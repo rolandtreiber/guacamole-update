@@ -29,7 +29,7 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.regex.Pattern;
 import javax.servlet.http.Cookie;
-import javax.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import javax.servlet.ServletInputStream;
 import javax.servlet.RequestDispatcher;

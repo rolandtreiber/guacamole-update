@@ -21,8 +21,8 @@ package org.apache.guacamole.rest.extension;
 
 import java.util.List;
 import javax.inject.Inject;
-import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
+import jakarta.ws.rs.Path;
+import jakarta.ws.rs.PathParam;
 import org.apache.guacamole.GuacamoleException;
 import org.apache.guacamole.GuacamoleResourceNotFoundException;
 import org.apache.guacamole.net.auth.AuthenticationProvider;

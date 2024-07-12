@@ -25,14 +25,15 @@ import java.io.Reader;
 import java.nio.ByteBuffer;
 import java.nio.CharBuffer;
 import java.util.List;
-import javax.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletRequest;
 import org.apache.guacamole.GuacamoleException;
 import org.apache.guacamole.io.GuacamoleReader;
 import org.apache.guacamole.io.GuacamoleWriter;
 import org.apache.guacamole.net.GuacamoleTunnel;
-import org.apache.catalina.websocket.StreamInbound;
-import org.apache.catalina.websocket.WebSocketServlet;
-import org.apache.catalina.websocket.WsOutbound;
+import org.apache.tomcat.websocket.*;
+//import org.apache.catalina.websocket.StreamInbound;
+//import org.apache.catalina.websocket.WebSocketServlet;
+//import org.apache.catalina.websocket.WsOutbound;
 import org.apache.guacamole.GuacamoleClientException;
 import org.apache.guacamole.GuacamoleConnectionClosedException;
 import org.apache.guacamole.protocol.FilteredGuacamoleWriter;
@@ -127,7 +128,7 @@ public abstract class GuacamoleWebSocketTunnelServlet extends WebSocketServlet {
     }
 
     @Override
-    public StreamInbound createWebSocketInbound(String protocol,
+    public Websocket createWebSocketInbound(String protocol,
             HttpServletRequest request) {
 
         final TunnelRequest tunnelRequest = new HTTPTunnelRequest(request);

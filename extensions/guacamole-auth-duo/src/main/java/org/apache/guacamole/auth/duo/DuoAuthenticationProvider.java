@@ -21,7 +21,7 @@ package org.apache.guacamole.auth.duo;
 
 import com.google.inject.Guice;
 import com.google.inject.Injector;
-import javax.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletRequest;
 import org.apache.guacamole.GuacamoleException;
 import org.apache.guacamole.net.auth.AbstractAuthenticationProvider;
 import org.apache.guacamole.net.auth.AuthenticatedUser;

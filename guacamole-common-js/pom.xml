@@ -34,7 +34,7 @@
         <groupId>org.apache.guacamole</groupId>
         <artifactId>guacamole-client</artifactId>
         <version>1.5.5</version>
-        <relativePath>../</relativePath>
+        <relativePath>../guacamole</relativePath>
     </parent>
 
     <properties>

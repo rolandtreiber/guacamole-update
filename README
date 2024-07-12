@@ -1,3 +1,11 @@
+# Important
+
+This repository is a fork of the Apache Guacamole client, where the intention is to update all underlying libraries including Tomcat to ensure compatibility with Spring Boot 3.
+The challenges include: classes from javax namespace replaced by their jakarta equivalents.
+The websocket api used (org.apache.catalina.websocket.) is now deprecated altogether (https://tomcat.apache.org/tomcat-7.0-doc/api/deprecated-list.html)
+replaced by JSR356 Websocket 1.1 implementation where the API is different, therefore the GuacamoleWebSocketTunnelServlet class need to be rewritten to support it.
+This project does not build currently!
+
 
 ------------------------------------------------------------
  About this README

@@ -20,6 +20,7 @@
 package org.apache.guacamole.auth.json;
 
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.security.Principal;
 import java.util.Arrays;
 import java.util.Collection;
@@ -28,11 +29,9 @@ import java.util.Enumeration;
 import java.util.Locale;
 import java.util.Map;
 import java.util.regex.Pattern;
-import javax.servlet.http.Cookie;
-import jakarta.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
-import javax.servlet.ServletInputStream;
-import javax.servlet.RequestDispatcher;
+
+import jakarta.servlet.*;
+import jakarta.servlet.http.*;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -115,6 +114,11 @@ public class RequestValidationServiceTest {
             }
 
             @Override
+            public long getContentLengthLong() {
+                return 0;
+            }
+
+            @Override
             public String getContentType() {
                 return null;
             }
@@ -185,6 +189,56 @@ public class RequestValidationServiceTest {
             }
 
             @Override
+            public ServletContext getServletContext() {
+                return null;
+            }
+
+            @Override
+            public AsyncContext startAsync() throws IllegalStateException {
+                return null;
+            }
+
+            @Override
+            public AsyncContext startAsync(ServletRequest servletRequest, ServletResponse servletResponse) throws IllegalStateException {
+                return null;
+            }
+
+            @Override
+            public boolean isAsyncStarted() {
+                return false;
+            }
+
+            @Override
+            public boolean isAsyncSupported() {
+                return false;
+            }
+
+            @Override
+            public AsyncContext getAsyncContext() {
+                return null;
+            }
+
+            @Override
+            public DispatcherType getDispatcherType() {
+                return null;
+            }
+
+            @Override
+            public String getRequestId() {
+                return null;
+            }
+
+            @Override
+            public String getProtocolRequestId() {
+                return null;
+            }
+
+            @Override
+            public ServletConnection getServletConnection() {
+                return null;
+            }
+
+            @Override
             public String getMethod() {
                 return null;
             }
@@ -234,7 +288,6 @@ public class RequestValidationServiceTest {
                 return null;
             }
 
-            @Override
             @Deprecated
             public String getRealPath(String path) {
                 return null;
@@ -306,6 +359,11 @@ public class RequestValidationServiceTest {
             }
 
             @Override
+            public String changeSessionId() {
+                return null;
+            }
+
+            @Override
             public HttpSession getSession(boolean create) {
                 return null;
             }
@@ -320,7 +378,6 @@ public class RequestValidationServiceTest {
                 return false;
             }
 
-            @Override
             @Deprecated
             public boolean isRequestedSessionIdFromUrl() {
                 return false;
@@ -329,6 +386,36 @@ public class RequestValidationServiceTest {
             @Override
             public boolean isRequestedSessionIdFromURL() {
                 return false;
+            }
+
+            @Override
+            public boolean authenticate(HttpServletResponse httpServletResponse) throws IOException, ServletException {
+                return false;
+            }
+
+            @Override
+            public void login(String s, String s1) throws ServletException {
+
+            }
+
+            @Override
+            public void logout() throws ServletException {
+
+            }
+
+            @Override
+            public Collection<Part> getParts() throws IOException, ServletException {
+                return null;
+            }
+
+            @Override
+            public Part getPart(String s) throws IOException, ServletException {
+                return null;
+            }
+
+            @Override
+            public <T extends HttpUpgradeHandler> T upgrade(Class<T> aClass) throws IOException, ServletException {
+                return null;
             }
 
             @Override
